@@ -1,5 +1,7 @@
 default: all 
-all: $(SOURCES) $(EXECUTABLE) $(DATA) print
+all: $(SOURCES) $(EXECUTABLE) $(DATA) print clean
+
+.PHONY: print clean
 
 $(EXECUTABLE): $(SOURCES) 	
 	$(CXX) -o $@ $< $(CFlags) 
@@ -7,9 +9,6 @@ $(EXECUTABLE): $(SOURCES)
 print:
 	./$(EXECUTABLE) $(DATA)
 
-.PHONY:print
-
 clean: 
-	-rm -f $(EXECUTABLE) 
+	@rm -f $(EXECUTABLE) 
 
-.PHONY:clean
