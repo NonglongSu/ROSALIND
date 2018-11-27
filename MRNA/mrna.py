@@ -1,5 +1,6 @@
 #! /usr/bin/env python
 
+#Python can handle large caculations.
 from sys import argv
 script, filename = argv
 
